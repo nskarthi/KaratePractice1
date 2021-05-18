@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"pool-1-thread-1","id":1},{"content":"pool-1-thread-2","id":2},{"content":"pool-1-thread-3","id":3},{"content":"pool-1-thread-4","id":4},{"content":"pool-1-thread-5","id":5}];
+var items = [{"id":1,"group":1,"content":"conduitApp\/feature\/SignUp[4.1:91]","start":1621361270132,"end":1621361272292,"title":"conduitApp\/feature\/SignUp[4.1:91] 14:07:50.132-14:07:52.292 Validate Signup error messages"},{"id":2,"group":2,"content":"conduitApp\/feature\/SignUp[4.2:92]","start":1621361270132,"end":1621361272209,"title":"conduitApp\/feature\/SignUp[4.2:92] 14:07:50.132-14:07:52.209 Validate Signup error messages"},{"id":3,"group":3,"content":"conduitApp\/feature\/SignUp[4.3:93]","start":1621361270132,"end":1621361272283,"title":"conduitApp\/feature\/SignUp[4.3:93] 14:07:50.132-14:07:52.283 Validate Signup error messages"},{"id":4,"group":4,"content":"conduitApp\/feature\/SignUp[4.4:94]","start":1621361270132,"end":1621361272214,"title":"conduitApp\/feature\/SignUp[4.4:94] 14:07:50.132-14:07:52.214 Validate Signup error messages"},{"id":5,"group":5,"content":"conduitApp\/feature\/SignUp[4.5:95]","start":1621361270132,"end":1621361272287,"title":"conduitApp\/feature\/SignUp[4.5:95] 14:07:50.132-14:07:52.287 Validate Signup error messages"},{"id":6,"group":2,"content":"conduitApp\/feature\/SignUp[4.6:96]","start":1621361272215,"end":1621361272563,"title":"conduitApp\/feature\/SignUp[4.6:96] 14:07:52.215-14:07:52.563 Validate Signup error messages"},{"id":7,"group":4,"content":"conduitApp\/feature\/SignUp[4.7:97]","start":1621361272219,"end":1621361272676,"title":"conduitApp\/feature\/SignUp[4.7:97] 14:07:52.219-14:07:52.676 Validate Signup error messages"},{"id":8,"group":3,"content":"conduitApp\/feature\/SignUp[4.8:98]","start":1621361272289,"end":1621361272564,"title":"conduitApp\/feature\/SignUp[4.8:98] 14:07:52.289-14:07:52.564 Validate Signup error messages"},{"id":9,"group":5,"content":"conduitApp\/feature\/SignUp[4.9:99]","start":1621361272292,"end":1621361272624,"title":"conduitApp\/feature\/SignUp[4.9:99] 14:07:52.292-14:07:52.624 Validate Signup error messages"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
